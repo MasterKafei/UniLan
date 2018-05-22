@@ -1,0 +1,5 @@
+survey_response:
+    creation:
+        create:
+            success: Votre vote à bien été pris en compte
+            already_send: Nous ne pouvons pas prendre en compte votre vote car vous avez déjà voté

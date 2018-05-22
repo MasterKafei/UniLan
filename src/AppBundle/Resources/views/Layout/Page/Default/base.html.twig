@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="{{ app.request.locale }}">
+
+{% block html_head %}
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        {% block meta_informations %}{% endblock meta_informations %}
+
+        <!-- FavIcon -->
+        <link href="{{ asset('assets/img/UniLan_WhiteLogo.png') }}"
+              rel="icon"
+              type="image/png">
+
+        <title>{% block title %}UniLan{% block sub_title %}{% endblock sub_title %}{% endblock title %}</title>
+
+        {% include '@Layout/Page/Default/stylesheets.html.twig' %}
+        {% block stylesheets %}{% endblock %}
+    </head>
+{% endblock html_head %}
+{% block html_body %}
+    <body>
+    {% block body %}{% endblock body %}
+    {% include '@Layout/Widget/Alert/alert.html.twig' %}
+    {% include '@Layout/Page/Default/javascripts.html.twig' %}
+    {% block javascripts %}{% endblock %}
+    </body>
+{% endblock html_body %}
+</html>

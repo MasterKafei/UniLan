@@ -1,0 +1,6 @@
+services:
+    AppBundle\DataFixtures\ORM\DataUserFixtures:
+        tags: [doctrine.fixture.orm]
+
+    AppBundle\DataFixtures\ORM\DataGameFixtures:
+        tags: [doctrine.fixture.orm]

@@ -1,0 +1,32 @@
+<div class="unilan-base" id="unilan-sondage">
+    <div class="unilan-sondage">
+        <div class="container">
+            <h1 class="display-3 unilan-sondage-title text-center p-">Votez pour vos jeux favoris</h1>
+            {{ form_start(form) }}
+            <form class="custom-form-big">
+                <div class="form-row">
+                    <div class="col">
+                        {{ form_widget(form.firstName, {'attr': {'class': 'form-control', 'placeholder': 'survey_response.creation.first_name'|trans({}, 'placeholder')}}) }}
+                    </div>
+                    <div class="col">
+                        {{ form_widget(form.lastName, {'attr': {'class': 'form-control', 'placeholder': 'survey_response.creation.last_name'|trans({}, 'placeholder')}}) }}
+                    </div>
+                </div>
+                <div class="form-row unilan-sondage-checkboxes">
+                    <div class="col">
+                        <!-- CheckBoxes -->
+                        {% for inputGame in form.games %}
+                            <div class="custom-control custom-checkbox">
+                                {{ form_widget(inputGame, {'attr': {'class': 'custom-control-input'}}) }}
+                                {{ form_label(inputGame, null, {'label_attr': {'class': 'custom-control-label'}}) }}
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="form-row">
+                    {{ form_widget(form.submit, {'attr': {'class': 'btn custom-full-btn'}}) }}
+                </div>
+            {{ form_end(form) }}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+{% extends '@Layout/Page/Full/base.html.twig' %}
+
+{% block content %}
+    <div class="app">
+        <!-- HomePage Section -->
+        <div id="unilan-homepage" class="unilan-base">
+            <div class="unilan-homepage-intro">
+                <div class="container-fluid h-100" style="background-color: rgba(0, 0, 0, 0.50);">
+                    <div class="row align-items-center h-100">
+                        <div class="col-12 mx-auto">
+                            <div class="unilan-homepage-header-text float-right text-center">
+                                <h1 class="display-1">Pret a en decoudre ?</h1>
+                                <button class="btn custom-full-btn disabled">S'inscrire à une lan</button>
+                                <button class="btn custom-full-btn" onclick="openPage(event, 'unilan-sondage')">Choisir vos jeux</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{ render(controller('AppBundle:SurveyResponse/Creation:createSurveyResponse')) }}
+    </div>
+{% endblock content %}

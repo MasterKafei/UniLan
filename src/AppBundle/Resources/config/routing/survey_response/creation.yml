@@ -1,0 +1,3 @@
+app_survey_response_creation_create:
+    path: /create
+    defaults: { _controller: 'AppBundle:SurveyResponse\Creation:createSurveyResponse' }

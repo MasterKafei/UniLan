@@ -1,0 +1,20 @@
+AppBundle\Entity\Game:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\GameRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+
+    manyToMany:
+        surveyResponses:
+            targetEntity: AppBundle\Entity\SurveyResponse
+            mappedBy: games
+    lifecycleCallbacks: {  }

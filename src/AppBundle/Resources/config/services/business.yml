@@ -1,0 +1,15 @@
+services:
+    app.business.user:
+        class: AppBundle\Service\Business\UserBusiness
+        parent: app.util.abstract_container_aware
+        public: true
+
+    app.business.request:
+        class: AppBundle\Service\Business\RequestBusiness
+        parent: app.util.abstract_container_aware
+        public: true
+
+    app.business.survey_response:
+        class: AppBundle\Service\Business\SurveyResponseBusiness
+        parent: app.util.abstract_container_aware
+        public: true

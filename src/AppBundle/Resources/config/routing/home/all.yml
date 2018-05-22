@@ -1,0 +1,3 @@
+app_home_showing:
+    resource: "showing.yml"
+    prefix:   /
