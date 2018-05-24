@@ -48,6 +48,14 @@ class Player
     private $point;
 
     /**
+     * Constructor.
+     */
+    public function __construct()
+    {
+        $this->point = 0;
+    }
+
+    /**
      * @var Edition[]
      */
     private $editions;
