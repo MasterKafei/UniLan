@@ -13,7 +13,7 @@
                 {% if loop.index == '1' and player.point != 0 %}
                     {% set tournament_started = true %}
                     <span class="player-box-winner">
-                        <i class="fas fa-trophy"></i> <i>{{ player.pseudo }}</i> - {{ player.firstName }} {{ player.lastName|first|upper }}.
+                        <i class="fas fa-trophy" style="color: #daa520;"></i> <i>{{ player.pseudo }}</i> - {{ player.firstName }} {{ player.lastName|first|upper }}.
                     </span>
                 {% elseif tournament_started and loop.index == '2' and player.point != 0 %}
                     <span class="player-box">
