@@ -34,8 +34,13 @@ edition:
         stats:
             title:
                 no_stats: Pas encore de résultats
+                main_title: Classement UniLan
+                main_stats: Toutes éditions confondues
             sub_title:
                 no_stats: Revenez après la prochaine LAN pour voir les résultats sur cette page
+            content:
+                points: pts
+                edition: Edition
 player:
     creation:
         create:

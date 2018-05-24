@@ -49,10 +49,22 @@ class Player
 
     /**
      * Constructor.
+     * @param Player|null $player
      */
-    public function __construct()
+    public function __construct(Player $player = null)
     {
-        $this->point = 0;
+        if ($player == null) {
+            $this->point = 0;
+        } else {
+            $this
+                ->setPseudo($player->getPseudo())
+                ->setFirstName($player->getFirstName())
+                ->setLastName($player->getLastName())
+                ->setPoint($player->getPoint())
+                ->setHasVPN($player->hasVPN())
+                ->setHas4G($player->getHas4G())
+                ->setEditions($player->getEditions());
+        }
     }
 
     /**

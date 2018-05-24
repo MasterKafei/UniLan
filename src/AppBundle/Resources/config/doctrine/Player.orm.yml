@@ -18,7 +18,6 @@ AppBundle\Entity\Player:
         pseudo:
             type: string
             length: 255
-            unique: true
         point:
             type: integer
             length: 10
