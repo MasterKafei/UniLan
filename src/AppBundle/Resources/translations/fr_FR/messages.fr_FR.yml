@@ -8,7 +8,7 @@ home:
 
 topbar:
     item:
-        homepage: Acceuil
+        homepage: Accueil
         tournament: Participer
         leaderboard: Classements
 
@@ -31,6 +31,11 @@ edition:
                 other_games: "PS: D'autres jeux seront disponibles sur place mais ne seront pas joués dans le tournoi"
                 no_players: Aucun joueurs inscrit pour le moment
                 no_games: Aucun jeux enregistré pour le moment
+        stats:
+            title:
+                no_stats: Pas encore de résultats
+            sub_title:
+                no_stats: Revenez après la prochaine LAN pour voir les résultats sur cette page
 player:
     creation:
         create:

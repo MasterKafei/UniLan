@@ -15,4 +15,9 @@ class ShowingController extends Controller
             'edition_number' => $editionNumber
         ));
     }
+
+    public function showStatsAction()
+    {
+        return $this->render('@Page/Edition/Showing/stats.html.twig');
+    }
 }

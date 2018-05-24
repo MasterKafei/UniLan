@@ -8,15 +8,25 @@
     <div class="unilan-tournament-player-boxes">
         <h3>{{ 'edition.showing.show.content.players'|trans }} :</h3>
         {% if edition.players is not empty %}
+            {% set tournament_started = false %}
             {% for player in edition.players %}
                 {% if loop.index == '1' and player.point != 0 %}
+                    {% set tournament_started = true %}
                     <span class="player-box-winner">
-                    <i class="fas fa-trophy"></i> <i>{{ player.pseudo }}</i> - {{ player.firstName }} {{ player.lastName|first|upper }}.
-                </span>
+                        <i class="fas fa-trophy"></i> <i>{{ player.pseudo }}</i> - {{ player.firstName }} {{ player.lastName|first|upper }}.
+                    </span>
+                {% elseif tournament_started and loop.index == '2' and player.point != 0 %}
+                    <span class="player-box">
+                        <i class="fas fa-trophy" style="color: #c0c0c0"></i> <i>{{ player.pseudo }}</i> - {{ player.firstName }} {{ player.lastName|first|upper }}.
+                    </span>
+                {% elseif tournament_started and loop.index == '3' and player.point != 0 %}
+                    <span class="player-box">
+                        <i class="fas fa-trophy" style="color: #cd7f32"></i> <i>{{ player.pseudo }}</i> - {{ player.firstName }} {{ player.lastName|first|upper }}.
+                    </span>
                 {% else %}
                     <span class="player-box">
-                    <i class="fas fa-user-circle"></i> <i>{{ player.pseudo }}</i> - {{ player.firstName }} {{ player.lastName|first|upper }}.
-                </span>
+                        <i class="fas fa-user-circle"></i> <i>{{ player.pseudo }}</i> - {{ player.firstName }} {{ player.lastName|first|upper }}.
+                    </span>
                 {% endif %}
             {% endfor %}
         {% else %}
