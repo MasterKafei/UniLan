@@ -6,9 +6,17 @@ services:
         tags:
             - { name: form.type, alias: app_form_type_user_authentication_authenticate }
 
+
     app.form.type.survey_response.creation.create:
         class: AppBundle\Form\Type\SurveyResponse\Creation\SurveyResponseCreate
         public: true
         arguments: ['@router']
         tags:
             - { name: form.type, alias: app_form_type_survey_response_creation_create }
+
+    app.form.type.player.creation.create:
+        class: AppBundle\Form\Type\Player\PlayerCreationType
+        public: true
+        arguments: ['@router']
+        tags:
+            - { name: form.type, alias: app_form_type_player_creation_create }

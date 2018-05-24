@@ -2,3 +2,10 @@ survey_response:
     creation:
         first_name: Prénom
         last_name: Nom
+
+
+player:
+    creation:
+        first_name: Prénom
+        last_name: Nom
+        pseudo: Pseudo

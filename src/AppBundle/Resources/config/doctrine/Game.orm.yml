@@ -17,4 +17,10 @@ AppBundle\Entity\Game:
         surveyResponses:
             targetEntity: AppBundle\Entity\SurveyResponse
             mappedBy: games
+        playersLicense:
+            targetEntity: AppBundle\Entity\Player
+            mappedBy: gamesLicense
+        editions:
+            targetEntity: AppBundle\Entity\Edition
+            mappedBy: games
     lifecycleCallbacks: {  }

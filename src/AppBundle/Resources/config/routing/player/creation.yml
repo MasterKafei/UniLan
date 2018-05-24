@@ -1,0 +1,5 @@
+app_player_creation_create:
+    path:   /create/{id}
+    defaults: { _controller: 'AppBundle:Player/Creation:creationPlayer' }
+    requirements:
+        id: '\d+'

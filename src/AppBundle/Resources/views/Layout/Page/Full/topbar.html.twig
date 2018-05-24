@@ -9,13 +9,13 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link unilan-link" href="#" onclick="openPage(event, 'unilan-homepage')" id="defaultOpen">Accueil</a>
+                    <a class="nav-link unilan-link" href="#" onclick="openPage(event, 'unilan-homepage')"{% if focus is defined and focus == 'homepage' %} id="defaultOpen"{% endif %}>{{ 'topbar.item.homepage'|trans({}, 'messages') }}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link unilan-link" href="#">Participer</a>
+                    <a class="nav-link unilan-link" href="#" onclick="openPage(event, 'unilan-tournament')"{% if focus is defined and focus == 'tournament' %} id="defaultOpen"{% endif %}>{{ 'topbar.item.tournament'|trans({}, 'messages') }}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link unilan-link" href="#">Classements</a>
+                    <a class="nav-link unilan-link" href="#" onclick="openPage(event, 'unilan-leaderboard')"{% if focus is defined and focus == 'leaderboard' %} id="defaultOpen"{% endif %}>{{ 'topbar.item.leaderboard'|trans({}, 'messages') }}</a>
                 </li>
             </ul>
         </div>

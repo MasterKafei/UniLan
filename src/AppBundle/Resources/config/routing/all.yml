@@ -9,3 +9,8 @@ app_user:
 app_survey_response:
     resource: "survey_response/all.yml"
     prefix:   /survey_response/
+
+
+app_player:
+    resource: "player/all.yml"
+    prefix:   /player/

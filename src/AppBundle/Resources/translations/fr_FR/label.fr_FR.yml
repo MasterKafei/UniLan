@@ -2,3 +2,11 @@ survey_response:
     creation:
         first_name: Prénom
         last_name: Nom
+
+player:
+    creation:
+        first_name: Prénom
+        last_name: Nom
+        pseudo: Pseudo
+        has_4G: Je possède la 4G
+        has_VPN: J'ai un VPN

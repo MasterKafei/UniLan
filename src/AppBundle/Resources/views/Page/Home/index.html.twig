@@ -9,15 +9,22 @@
                     <div class="row align-items-center h-100">
                         <div class="col-12 mx-auto">
                             <div class="unilan-homepage-header-text float-right text-center">
-                                <h1 class="display-1">Pret a en decoudre ?</h1>
-                                <button class="btn custom-full-btn disabled">S'inscrire à une lan</button>
-                                <button class="btn custom-full-btn" onclick="openPage(event, 'unilan-sondage')">Choisir vos jeux</button>
+                                <h1 class="display-1">{{ 'home.showing.show.title'|trans({}, 'messages') }}</h1>
+                                <button class="btn custom-full-btn"
+                                        onclick="openPage(event, 'unilan-tournament')">{{ 'home.showing.show.buttons.register'|trans({}, 'messages') }}</button>
+                                <button class="btn custom-full-btn"
+                                        onclick="openPage(event, 'unilan-sondage')">{{ 'home.showing.show.buttons.survey'|trans({}, 'messages') }}</button>
                             </div>
                         </div>
                     </div>
                 </div>
+                <span class="unilan-homepage-author">Développé avec <i class="fas fa-heart" style="color: #a52a2a;"></i> par
+                    <a href="https://github.com/MasterKafei" target="_blank">MasterKafei</a> [BackEnd] et
+                    <a href="https://github.com/Craaftx" target="_blank">Craaftx</a> [FrontEnd]
+                </span>
             </div>
         </div>
         {{ render(controller('AppBundle:SurveyResponse/Creation:createSurveyResponse')) }}
+        {{ render(controller('AppBundle:Edition/Listing:listEdition')) }}
     </div>
 {% endblock content %}

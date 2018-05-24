@@ -1,0 +1,49 @@
+AppBundle\Entity\Player:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\PlayerRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        firstName:
+            type: string
+            length: 255
+        lastName:
+            type: string
+            length: 255
+        pseudo:
+            type: string
+            length: 255
+            unique: true
+        point:
+            type: integer
+            length: 10
+        has4G:
+            type: boolean
+            nullable: true
+        hasVPN:
+            type: boolean
+            nullable: true
+    manyToMany:
+        gamesLicense:
+            targetEntity: AppBundle\Entity\Game
+            inversedBy: playersLicense
+            joinTable:
+                name: game_license
+                joinColumns:
+                    survey_response_id:
+                        referencedColumnName: id
+                        nullable: false
+                        unique: false
+            inversedJoinColumns:
+                player_id:
+                    referenceColumnName: id
+            cascade: [ persist ]
+        editions:
+            targetEntity: AppBundle\Entity\Edition
+            mappedBy: players
+    lifecycleCallbacks: {  }

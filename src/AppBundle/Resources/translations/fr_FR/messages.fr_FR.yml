@@ -1,0 +1,42 @@
+home:
+    showing:
+        show:
+            title: Prêt à en découdre ?
+            buttons:
+                register: S'inscrire à une lan
+                survey: Choisir vos jeux
+
+topbar:
+    item:
+        homepage: Acceuil
+        tournament: Participer
+        leaderboard: Classements
+
+edition:
+    listing:
+        list:
+            titles:
+                next_edition: Nouvelles éditions
+                previous_edition: Ancienne éditions
+    showing:
+        show:
+            title:
+                lan: Lan
+            sub_title:
+                soon: Bientôt
+                passed: Terminé
+            content:
+                players: Joueurs
+                games: Jeux du tournoi
+                other_games: "PS: D'autres jeux seront disponibles sur place mais ne seront pas joués dans le tournoi"
+                no_players: Aucun joueurs inscrit pour le moment
+                no_games: Aucun jeux enregistré pour le moment
+player:
+    creation:
+        create:
+            title: S'inscrire
+
+survey_response:
+    creation:
+        create:
+            title: Votez pour vos jeux favoris

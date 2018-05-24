@@ -1,0 +1,45 @@
+AppBundle\Entity\Edition:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\EditionRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        date:
+            type: datetime
+    manyToMany:
+        players:
+            targetEntity: AppBundle\Entity\Player
+            orderBy:
+                point: DESC
+            inversedBy: editions
+            joinTable:
+                name: edition_player
+                joinColumns:
+                    edition_id:
+                        referencedColumnName: id
+                        nullable: false
+                        unique: false
+            inversedJoinColumns:
+                player_id:
+                    referenceColumnName: id
+            cascade: [ persist ]
+        games:
+            targetEntity: AppBundle\Entity\Game
+            inversedBy: editions
+            joinTable:
+                name: edition_game
+                joinColumns:
+                    edition_id:
+                        referencedColumnName: id
+                        nullage: false
+                        unique: false
+            inversedJoinColumns:
+                game_id:
+                    referenceColumnName: id
+            cascade: [ persist ]
+    lifecycleCallbacks: {  }

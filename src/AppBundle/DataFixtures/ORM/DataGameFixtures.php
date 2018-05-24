@@ -17,11 +17,15 @@ class DataGameFixtures extends AbstractFixture implements OrderedFixtureInterfac
         $game
             ->setName('Overwatch');
 
+        $this->addReference('game overwatch', $game);
+
         $manager->persist($game);
 
         $game = new Game();
         $game
-            ->setName('Fornite');
+            ->setName('Fortnite');
+
+        $this->addReference('game fornite', $game);
 
         $manager->persist($game);
 
@@ -29,11 +33,15 @@ class DataGameFixtures extends AbstractFixture implements OrderedFixtureInterfac
         $game
             ->setName('Assault Cube');
 
+        $this->addReference('game assault cube', $game);
+
         $manager->persist($game);
 
         $game = new Game();
         $game
             ->setName('Minecraft');
+
+        $this->addReference('game minecraft', $game);
 
         $manager->persist($game);
 
@@ -41,15 +49,21 @@ class DataGameFixtures extends AbstractFixture implements OrderedFixtureInterfac
         $game
             ->setName('Mario Kart');
 
+        $this->addReference('game mario kart', $game);
+
         $manager->persist($game);
 
         $game = new Game();
         $game
             ->setName('Heroes of the Storm');
 
+        $this->addReference('game heroes of the storm', $game);
+
         $game = new Game();
         $game
             ->setName('Hearthstone');
+
+        $this->addReference('game hearthstone', $game);
 
         $manager->persist($game);
 
@@ -57,17 +71,23 @@ class DataGameFixtures extends AbstractFixture implements OrderedFixtureInterfac
         $game
             ->setName('League of Legends');
 
+        $this->addReference('game league of legends', $game);
+
         $manager->persist($game);
 
         $game = new Game();
         $game
             ->setName('Astroneer');
 
+        $this->addReference('game astroneer', $game);
+
         $manager->persist($game);
 
         $game = new Game();
         $game
             ->setName('Super Smash Bros 4 Wii U');
+
+        $this->addReference('game super smash bros 4 wii u', $game);
 
         $manager->persist($game);
 

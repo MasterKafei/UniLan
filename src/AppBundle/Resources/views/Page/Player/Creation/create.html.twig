@@ -1,0 +1,33 @@
+<div class="unilan-tournament-register">
+    <h3>{{ 'player.creation.create.title'|trans({}, 'messages') }} : </h3>
+    {{ form_start(form, {'attr': {'class': 'custom-form-big'}}) }}
+    <div class="form-row">
+        <div class="col-4">
+            {{ form_widget(form.firstName, {'attr': {'class': 'form-control', 'placeholder': 'player.creation.first_name'|trans({}, 'placeholder')}}) }}
+        </div>
+        <div class="col-4">
+            {{ form_widget(form.lastName, {'attr': {'class': 'form-control', 'placeholder': 'player.creation.last_name'|trans({}, 'placeholder')}}) }}
+        </div>
+        <div class="col-4">
+            {{ form_widget(form.pseudo, {'attr': {'class': 'form-control', 'placeholder': 'player.creation.pseudo'|trans({}, 'placeholder')}}) }}
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="col-2 pt-4">
+            <div class="custom-control custom-checkbox">
+                {{ form_widget(form.has4G, {'attr': {'class': 'custom-control-input'}}) }}
+                {{ form_label(form.has4G, null, {'label_attr': {'class': 'custom-control-label'}}) }}
+            </div>
+        </div>
+        <div class="col-2 pt-4">
+            <div class="custom-control custom-checkbox">
+                {{ form_widget(form.hasVPN, {'attr': {'class': 'custom-control-input'}}) }}
+                {{ form_label(form.hasVPN, null, {'label_attr': {'class': 'custom-control-label'}}) }}
+            </div>
+        </div>
+        <div class="col-8">
+            {{ form_widget(form.submit, {'attr': {'class': 'btn custom-full-btn'}}) }}
+        </div>
+    </div>
+    {{ form_end(form) }}
+</div>

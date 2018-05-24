@@ -1,0 +1,43 @@
+<div class="col-md-12 unilan-tournament-item">
+    <h1>{{ 'edition.showing.show.title.lan'|trans }} #{{ edition_number }}</h1>
+    <h4>{% if edition.date|date('Y-m-d') > "now"|date('Y-m-d') %}
+            {{ 'edition.showing.show.sub_title.soon'|trans({}, 'messages') }}
+        {% else %}
+            {{ 'edition.showing.show.sub_title.passed'|trans({}, 'messages') }}
+        {% endif %} - {{ edition.date|date('d/m/Y') }}</h4>
+    <div class="unilan-tournament-player-boxes">
+        <h3>{{ 'edition.showing.show.content.players'|trans }} :</h3>
+        {% if edition.players is not empty %}
+            {% for player in edition.players %}
+                {% if loop.index == '1' and player.point != 0 %}
+                    <span class="player-box-winner">
+                    <i class="fas fa-trophy"></i> <i>{{ player.pseudo }}</i> - {{ player.firstName }} {{ player.lastName|first|upper }}.
+                </span>
+                {% else %}
+                    <span class="player-box">
+                    <i class="fas fa-user-circle"></i> <i>{{ player.pseudo }}</i> - {{ player.firstName }} {{ player.lastName|first|upper }}.
+                </span>
+                {% endif %}
+            {% endfor %}
+        {% else %}
+            {{ 'edition.showing.show.content.no_players'|trans({}, 'messages') }}
+        {% endif %}
+    </div>
+    <div class="unilan-tournament-game-boxes">
+        <h3>{{ 'edition.showing.show.content.games'|trans({}, 'messages') }} :</h3>
+        {% if edition.games is not empty %}
+            {% for game in edition.games %}
+                <span class="game-box"><i class="fas fa-gamepad"></i> {{ game.name }}</span>
+            {% endfor %}
+        {% else %}
+            {{ 'edition.showing.show.content.no_games'|trans({}, 'messages') }}
+        {% endif %}
+        {% if edition.date|date('Y-m-d') > "now"|date('Y-m-d') %}
+        <br><br>
+        <span class="m-2">{{ 'edition.showing.show.content.other_games'|trans({}, 'messages') }}</span>
+        {% endif %}
+    </div>
+    {% if edition.date|date('Y-m-d') > "now"|date('Y-m-d') %}
+        {{ render(controller('AppBundle:Player/Creation:creationPlayer', {'edition': edition})) }}
+    {% endif %}
+</div>

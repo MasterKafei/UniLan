@@ -3,3 +3,9 @@ survey_response:
         create:
             success: Votre vote à bien été pris en compte
             already_send: Nous ne pouvons pas prendre en compte votre vote car vous avez déjà voté
+
+player:
+    creation:
+        create:
+            success:  Votre candidature a bien été pris en compte
+            pseudo_already_used: player_pseudo est déjà utilisé pour cette édition

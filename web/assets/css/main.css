@@ -20,8 +20,8 @@ html, body {
 }
 
 @keyframes fadeEffect {
-  from {margin-top: -100vh;}
-  to {margin-top: 0;}
+  from {margin-left: -100vw;}
+  to {margin-left: 0;}
 }
 
 /* Button Style */
@@ -52,14 +52,17 @@ html, body {
   top: 0;
   width: 100%;
   height: 200px;
-  background-image: linear-gradient(to bottom right, #0488d3, #0488d3 50%, transparent 50%, transparent);
+  background-image: -webkit-linear-gradient(to bottom right, #0488d3, #0488d3 50%, transparent 50%, transparent); /* For Chrome 25 and Safari 6, iOS 6.1, Android 4.3 */
+  background-image:    -moz-linear-gradient(to bottom right, #0488d3, #0488d3 50%, transparent 50%, transparent); /* For Firefox (3.6 to 15) */
+  background-image:      -o-linear-gradient(to bottom right, #0488d3, #0488d3 50%, transparent 50%, transparent); /* For old Opera (11.1 to 12.0) */
+  background-image:         linear-gradient(to bottom right, #0488d3, #0488d3 50%, transparent 50%, transparent); /* Standard syntax; must be last */
 }
 
 .unilan-homepage-header .navbar-custom {
   font-size: 1.2rem;
   text-transform: uppercase;
   font-weight: 100;
-  z-index: 2000;
+  z-index: 2;
   padding: 5px 40px;
 }
 
@@ -85,7 +88,8 @@ html, body {
 }
 
 .unilan-homepage-intro {
-  background-image: url('../img/home.jpg'); 
+  background-image: url('../img/home.jpg');
+  background-repeat: no-repeat;
   color: white;
   font-family: 'Open Sans Condensed', sans-serif;
   text-transform: uppercase;
@@ -98,17 +102,35 @@ html, body {
   padding: 40px 20px 0px 0px;
 }
 
+.unilan-homepage-author {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 5px;
+  text-align: center;
+
+  background-color: #151515;
+  color: #aaaaaa;
+
+  font-size: 0.7rem;
+  font-weight: 100;
+  letter-spacing: 1px;
+  text-transform: none;
+}
+
 /* Sondage Style */
 .unilan-sondage {
   background-color: #444;
   color: white;
   min-height: 100vh;
-  padding-top: 200px;
+  padding: 200px 0px 0px 100px;
 }
 
 .unilan-sondage-title {
   font-family: 'Open Sans Condensed', sans-serif;
   text-transform: uppercase;
+  padding: 20px;
 }
 
 .unilan-sondage-checkboxes {
@@ -163,7 +185,141 @@ html, body {
   box-shadow: 0 0 0 0.2rem #333;
 }
 
-/* Doctrina Alert Box */
+/* Participer Style */
+#unilan-tournament {
+  padding-top: 200px;
+  min-height: 100vh;
+  color: white;
+  background-color: #444;
+}
+
+.unilan-tournament-item {
+  background-color: #333;
+  border: 5px solid #0488d3;
+  margin: 30px 0px;
+  padding: 0px;
+}
+
+#unilan-tournament h1 {
+  background-color: #353535;
+  font-size: 3rem;
+  text-transform: uppercase;
+  margin: 0px 0px 0px 0px;
+  padding: 10px 0px 10px 20px;
+}
+
+#unilan-tournament  .unilan-tournament-separator {
+  font-weight: 700;
+  background-color: transparent;
+  color: white;
+  padding-left: 0px;
+}
+
+#unilan-tournament h4 {
+  background-color: #353535;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  margin: 0px;
+  padding: 0px 0px 20px 20px;
+  border-bottom: 5px solid #0488d3;
+}
+
+#unilan-tournament h3 {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  margin: 0px 10px 20px 10px;
+}
+
+#unilan-tournament .player-box {
+  display: inline-block;
+  font-weight: 700;
+  outline: 2px solid #555555;
+  border-left: 5px solid whitesmoke;
+  background-color: #333;
+  padding: 10px 20px;
+  margin: 10px;
+}
+
+#unilan-tournament .player-box-winner {
+  display: inline-block;
+  font-weight: 700;
+  border: 2px solid #ffa500;
+  background-color: #333;
+  padding: 10px 20px;
+  margin: 10px;
+}
+
+#unilan-tournament .game-box {
+  display: inline-block;
+  font-weight: 700;
+  outline: 2px solid #555555;
+  border-left: 5px solid #0488d3;
+  background-color: #333;
+  padding: 10px 20px;
+  margin: 10px;
+}
+
+.unilan-tournament-player-boxes {
+  padding: 20px;
+}
+
+.unilan-tournament-game-boxes {
+  padding: 20px;
+}
+
+.unilan-tournament-register {
+  border-top: 5px solid #333;
+  padding: 20px
+}
+
+#unilan-tournament .custom-form-big .custom-full-btn {
+  margin: 10px 0px;
+}
+
+/* leaderboard-css */
+#unilan-leaderboard {
+  padding-top: 200px;
+  background-color: #333;
+  color: white;
+}
+
+.unilan-leaderboard-maintitle {
+  font-weight: 700;
+  text-transform: uppercase;
+  background-color: transparent;
+  color: white;
+  margin-bottom: 30px;
+  font-size: 3rem;
+  text-transform: uppercase;
+}
+
+.unilan-leaderboard-wrapper {
+  width: 100%;
+  box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 0px 0px 10px 0px;
+  margin-bottom: 20px;
+  color: #333;
+  background-color: white;
+}
+
+.unilan-leaderboard-title {
+  font-weight: 100;
+  text-transform: uppercase;
+  border-left: 10px solid #0488d3;
+  border-top: 10px solid #0488d3;
+  padding: 10px 0px 10px 15px;
+  margin-bottom: 20px;
+}
+
+.unilan-leaderboard-first {
+  line-height: 4rem;
+  font-size: 1.6rem;
+  background-color: #0488d3;
+  color: whitesmoke;
+}
+
+/* Dashboard Style */
+/* unilan Alert Box */
 .unilan-alert {
   width: 500px;
   background-color: #f6f6f8;

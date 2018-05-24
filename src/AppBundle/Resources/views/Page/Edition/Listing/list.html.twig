@@ -1,0 +1,30 @@
+{% set edition_number = 1 %}
+{% set next_editions = [] %}
+{% set previous_editions = [] %}
+{% for edition in editions %}
+    {% if edition.date|date('Y-m-d') > "now"|date('Y-m-d') %}
+        {% set next_editions = next_editions|merge([edition]) %}
+    {% else %}
+        {% set previous_editions = previous_editions|merge([edition]) %}
+    {% endif %}
+{% endfor %}
+<div class="unilan-base" id="unilan-tournament">
+    <div class="container p-0">
+        <div class="row">
+            {% if next_editions is not empty %}
+                <h1 class="text-center unilan-tournament-separator">{{ 'edition.listing.list.titles.next_edition'|trans }}</h1>
+                {% for edition in next_editions %}
+                    {% include '@Page/Edition/Showing/show.html.twig' with {'edition': edition, 'edition_number': edition_number } %}
+                    {% set edition_number = edition_number + 1 %}
+                {% endfor %}
+            {% endif %}
+            {% if previous_editions is not empty %}
+                <h1 class="text-center unilan-tournament-separator">{{ 'edition.listing.list.titles.previous_edition'|trans }}</h1>
+                {% for edition in previous_editions %}
+                    {% include '@Page/Edition/Showing/show.html.twig' with {'edition': edition, 'edition_number': edition_number } %}
+                    {% set edition_number = edition_number + 1 %}
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+</div>
