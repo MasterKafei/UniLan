@@ -19,7 +19,7 @@ class CreationController extends Controller
         $form = $this->createForm(PlayerCreationType::class, $player, array('edition' => $edition));
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
+        if ($form->isSubmitted() && $form->isValid() && $edition->getDate() > new \DateTime()) {
 
             $errors = false;
             foreach($edition->getPlayers() as $editionPlayer) {

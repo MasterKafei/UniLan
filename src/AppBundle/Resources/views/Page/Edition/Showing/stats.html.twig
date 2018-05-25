@@ -15,14 +15,14 @@
                 <div class="col-lg-12">
                     <h1 class="unilan-leaderboard-maintitle"><i class="fas fa-trophy"></i> {{ 'edition.showing.stats.title.main_title'|trans({}, 'messages') }}</h1>
                 </div>
-                {% if all_editions_players is not empty %}
+                {% if all_editions_players is not empty and (all_editions_players|first).point != 0 %}
                     <div class="col-lg-12">
                         <div class="unilan-leaderboard-wrapper">
                             <h2 class="unilan-leaderboard-title">{{ 'edition.showing.stats.title.main_stats'|trans({}, 'messages') }}</h2>
                             <table class="table table-sm">
                                 <tbody>
                                 {% set rank = 1 %}
-                                {% for player in all_editions_players %}
+                                {% for player in all_editions_players if player.point != 0 and rank <= 10 %}
                                     <tr{% if loop.index == '1' %} class="unilan-leaderboard-first"{% endif %}>
                                         <th class="pl-4" scope="row"> {{ rank }}</th>
                                         <td><b>{{ player.pseudo }}<b></b></b></td>
@@ -40,7 +40,7 @@
                 {% for key,edition in editions %}
                     <div class="col-lg-6">
                         <div class="unilan-leaderboard-wrapper">
-                            <h2 class="unilan-leaderboard-title">{{ 'edition.showing.stats.content.edition'|trans({}, 'messages') }} #{{ key + 1 }}</h2>
+                            <h2 class="unilan-leaderboard-title">{{ 'edition.showing.stats.content.edition'|trans({}, 'messages') }} #{{ editions|length - key }}</h2>
                             <table class="table table-sm">
                                 <tbody>
                                 {% for player_key,player in edition.players %}

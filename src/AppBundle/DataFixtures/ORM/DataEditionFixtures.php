@@ -40,10 +40,11 @@ class DataEditionFixtures extends AbstractFixture implements OrderedFixtureInter
         $manager->persist($edition);
 
         $players = array(
-            (new Player())->setFirstName('Jean')->setLastName('Marius')->setPseudo('MasterKafei')->setPoint(2),
-            (new Player())->setFirstName('Dorian')->setLastName('Guilmain')->setPseudo('Craaftx')->setPoint(12),
-            (new Player())->setFirstName('Romain')->setLastName('Belot')->setPseudo('Hundil')->setPoint(45),
-            (new Player())->setFirstName('Oulian')->setLastName('Semille')->setPseudo('Nerva')->setPoint(31),
+            (new Player())->setFirstName('Jean')->setLastName('Marius')->setPseudo('MasterKafei')->setPoint(rand(0, 100)),
+            (new Player())->setFirstName('Dorian')->setLastName('Guilmain')->setPseudo('Craaftx')->setPoint(rand(0, 100)),
+            (new Player())->setFirstName('Romain')->setLastName('Belot')->setPseudo('Hundil')->setPoint(rand(0, 100)),
+            (new Player())->setFirstName('Oulian')->setLastName('Semille')->setPseudo('Nerva')->setPoint(rand(0, 100)),
+            (new Player())->setFirstName('Oliver')->setLastName('Argentieri')->setPseudo('Nunutte')->setPoint(rand(0, 100)),
         );
 
         $edition = new Edition();
@@ -60,10 +61,18 @@ class DataEditionFixtures extends AbstractFixture implements OrderedFixtureInter
         $manager->persist($edition);
 
         $players = array(
-            (new Player())->setFirstName('Jean')->setLastName('Marius')->setPseudo('MasterKafei')->setPoint(12),
-            (new Player())->setFirstName('Dorian')->setLastName('Guilmain')->setPseudo('Craaftx')->setPoint(1),
-            (new Player())->setFirstName('Romain')->setLastName('Belot')->setPseudo('Hundil')->setPoint(5),
-            (new Player())->setFirstName('Oulian')->setLastName('Semille')->setPseudo('Nerva')->setPoint(9),
+            (new Player())->setFirstName('Jean')->setLastName('Marius')->setPseudo('MasterKafei')->setPoint(rand(0, 100)),
+            (new Player())->setFirstName('Dorian')->setLastName('Guilmain')->setPseudo('Craaftx')->setPoint(rand(0, 100)),
+            (new Player())->setFirstName('Romain')->setLastName('Belot')->setPseudo('Hundil')->setPoint(rand(0, 100)),
+            (new Player())->setFirstName('Oulian')->setLastName('Semille')->setPseudo('Nerva')->setPoint(rand(0, 100)),
+            (new Player())->setFirstName('Pierre-Louis')->setLastName('D')->setPseudo('pld')->setPoint(rand(0, 100)),
+            (new Player())->setFirstName('Nicolas')->setLastName('Jeanne')->setPseudo('Meedle_')->setPoint(rand(0, 100)),
+            (new Player())->setFirstName('Anne-Sophie')->setLastName('Cousteix')->setPseudo('Etoily')->setPoint(rand(0, 100)),
+            (new Player())->setFirstName('Vincent')->setLastName('Lancelot')->setPseudo('Vlancelot')->setPoint(rand(0, 100)),
+            (new Player())->setFirstName('Lucas')->setLastName('Seguret')->setPseudo('Killua')->setPoint(rand(0, 100)),
+            (new Player())->setFirstName('Paul')->setLastName('Marius')->setPseudo('Paolo')->setPoint(rand(0, 100)),
+            (new Player())->setFirstName('Nicolas')->setLastName('Lorrain')->setPseudo('Idioman')->setPoint(rand(0, 100)),
+            (new Player())->setFirstName('Antoine-Marie')->setLastName('Besrnard')->setPseudo('Vanialy')->setPoint(rand(0, 100)),
         );
 
         $edition = new Edition();

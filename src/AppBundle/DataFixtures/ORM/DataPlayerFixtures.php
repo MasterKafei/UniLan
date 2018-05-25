@@ -20,7 +20,7 @@ class DataPlayerFixtures extends AbstractFixture implements OrderedFixtureInterf
             ->setPseudo('MasterKafei')
             ->setHas4G(false)
             ->setHasVPN(true)
-            ->setPoint(20);
+            ->setPoint(rand(0, 100));
 
         $this->addReference('player jean marius', $player);
 
@@ -34,7 +34,7 @@ class DataPlayerFixtures extends AbstractFixture implements OrderedFixtureInterf
             ->setPseudo('Craaftx')
             ->setHas4G(true)
             ->setHasVPN(true)
-            ->setPoint(30);
+            ->setPoint(rand(0, 100));
 
         $this->addReference('player dorian guilmain', $player);
 
@@ -48,7 +48,7 @@ class DataPlayerFixtures extends AbstractFixture implements OrderedFixtureInterf
             ->setPseudo('Hundil')
             ->setHas4G(true)
             ->setHasVPN(false)
-            ->setPoint(18);
+            ->setPoint(rand(0, 100));
 
         $this->addReference('player romain belot', $player);
 
@@ -62,7 +62,7 @@ class DataPlayerFixtures extends AbstractFixture implements OrderedFixtureInterf
             ->setPseudo('Nerva')
             ->setHas4G(true)
             ->setHasVPN(false)
-            ->setPoint(16);
+            ->setPoint(rand(0, 100));
 
         $this->addReference('player oulian semille', $player);
 

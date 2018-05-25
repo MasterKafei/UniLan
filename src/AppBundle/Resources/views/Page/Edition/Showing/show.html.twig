@@ -1,6 +1,6 @@
 <div class="col-md-12 unilan-tournament-item">
     <h1>{{ 'edition.showing.show.title.lan'|trans }} #{{ edition_number }}</h1>
-    <h4>{% if edition.date|date('Y-m-d') > "now"|date('Y-m-d') %}
+    <h4>{% if edition.date|date('Y-m-d H:i:s') > "now"|date('Y-m-d H:i:s') %}
             {{ 'edition.showing.show.sub_title.soon'|trans({}, 'messages') }}
         {% else %}
             {{ 'edition.showing.show.sub_title.passed'|trans({}, 'messages') }}
@@ -42,12 +42,12 @@
         {% else %}
             {{ 'edition.showing.show.content.no_games'|trans({}, 'messages') }}
         {% endif %}
-        {% if edition.date|date('Y-m-d') > "now"|date('Y-m-d') %}
+        {% if edition.date|date('Y-m-d H:i:s') > "now"|date('Y-m-d H:i:s') %}
         <br><br>
         <span class="m-2">{{ 'edition.showing.show.content.other_games'|trans({}, 'messages') }}</span>
         {% endif %}
     </div>
-    {% if edition.date|date('Y-m-d') > "now"|date('Y-m-d') %}
+    {% if edition.date|date('Y-m-d H:i:s') > "now"|date('Y-m-d H:i:s') %}
         {{ render(controller('AppBundle:Player/Creation:creationPlayer', {'edition': edition})) }}
     {% endif %}
 </div>
